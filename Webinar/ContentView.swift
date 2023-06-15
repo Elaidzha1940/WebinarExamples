@@ -16,42 +16,31 @@ enum Number {
     case five
 }
 
+//let name = person.0
+//let age = person.1
+//
+//let (personName, personAge) = person
+//
+//print("Name: \(personName), Age: \(personAge)")
+
+
+//array
 struct ContentView: View {
     
-    let number: Number
-
+    let fruits = ["Apple", "Banana", "Orange"]
+    
     var body: some View {
         
-        VStack {
-                    switch number {
-                    case .one:
-                        Text("1")
-                            .font(.largeTitle)
-                            .foregroundColor(.blue)
-                    case .two:
-                        Text("2")
-                            .font(.largeTitle)
-                            .foregroundColor(.green)
-                    case .three:
-                        Text("3")
-                            .font(.largeTitle)
-                            .foregroundColor(.orange)
-                    case .four:
-                        Text("4")
-                            .font(.largeTitle)
-                            .foregroundColor(.purple)
-                    case .five:
-                        Text("5")
-                            .font(.largeTitle)
-                            .foregroundColor(.red)
-                    }
-                }
-        
+        List(fruits, id: \.self) { fruit in
+            Text(fruit)
+        }
     }
 }
 
+
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(number: .three)
+        ContentView()
     }
 }
