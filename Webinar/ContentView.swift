@@ -23,21 +23,43 @@ enum Number {
 //
 //print("Name: \(personName), Age: \(personAge)")
 
+// @State private var favoriteColor: String?
 
-//array
 struct ContentView: View {
-    
-    let fruits = ["Apple", "Banana", "Orange"]
+
+    var favoriteColor: String?
     
     var body: some View {
         
-        List(fruits, id: \.self) { fruit in
-            Text(fruit)
+        VStack {
+            Text("Your favorite color:")
+            
+            if favoriteColor != nil {
+                Text(favoriteColor!)
+                
+            } else {
+                Text("No favorite color selected")
+                
+            }
         }
+        
+        //        VStack {
+        //            Text("Your favorite color:")
+        //
+        //            if let color = favoriteColor {
+        //                Text(color)
+        //
+        //            } else {
+        //                Text("No favorite color selected")
+        //
+        //            }
+        //
+        //            Button("Set Favorite Color") {
+        //                favoriteColor = "Red"
+        //            }
+        //        }
     }
 }
-
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
