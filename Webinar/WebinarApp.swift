@@ -11,7 +11,7 @@ import SwiftUI
 struct WebinarApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(number: 7, numberState: .prime)
+            ContentView(number: .three)
         }
     }
 }

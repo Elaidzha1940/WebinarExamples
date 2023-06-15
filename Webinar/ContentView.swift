@@ -8,45 +8,50 @@
 
 import SwiftUI
 
-enum NumberState {
-    case even
-    case odd
-    case prime
+enum Number {
+    case one
+    case two
+    case three
+    case four
+    case five
 }
 
 struct ContentView: View {
     
-    let number: Int
-    let numberState: NumberState
-    
+    let number: Number
+
     var body: some View {
         
         VStack {
-            Text("\(number)")
-                .font(.largeTitle)
-                .foregroundColor(.blue)
-            
-            switch numberState {
-            case .even:
-                Text("Even")
-                    .font(.title)
-                    .foregroundColor(.green)
-            case .odd:
-                Text("Odd")
-                    .font(.title)
-                    .foregroundColor(.orange)
-            case .prime:
-                Text("Prime")
-                    .font(.title)
-                    .foregroundColor(.purple)
-            }
-        }
+                    switch number {
+                    case .one:
+                        Text("1")
+                            .font(.largeTitle)
+                            .foregroundColor(.blue)
+                    case .two:
+                        Text("2")
+                            .font(.largeTitle)
+                            .foregroundColor(.green)
+                    case .three:
+                        Text("3")
+                            .font(.largeTitle)
+                            .foregroundColor(.orange)
+                    case .four:
+                        Text("4")
+                            .font(.largeTitle)
+                            .foregroundColor(.purple)
+                    case .five:
+                        Text("5")
+                            .font(.largeTitle)
+                            .foregroundColor(.red)
+                    }
+                }
         
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(number: 7, numberState: .prime)
+        ContentView(number: .three)
     }
 }
